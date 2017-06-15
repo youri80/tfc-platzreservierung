@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { BoardviewComponent } from './boardview/boardview.component';
 import { LoginviewComponent } from './loginview/loginview.component';
 import { RouterModule } from '@angular/router';
+import { DateviewComponent } from './dateview/dateview.component';
+import { SchedulerviewComponent } from './schedulerview/schedulerview.component';
 
 
 
@@ -14,7 +16,9 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AppComponent,
     BoardviewComponent,
-    LoginviewComponent
+    LoginviewComponent,
+    DateviewComponent,
+    SchedulerviewComponent
   ],
   imports: [
     BrowserModule,
