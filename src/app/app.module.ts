@@ -3,14 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BoardviewComponent } from './boardview/boardview.component';
+import { LoginviewComponent } from './loginview/loginview.component';
+import { RouterModule } from '@angular/router';
+
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    BoardviewComponent
+    BoardviewComponent,
+    LoginviewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: 'login',
+        component: LoginviewComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
