@@ -1,0 +1,33 @@
+
+/* Working sticky table header - Section start*/
+/*table {
+        width: 100%;
+    }
+
+thead, tbody, tr, td, th { display: block; }
+
+tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+thead th {
+    height: 50px;
+
+    
+}
+
+tbody {
+    height: 500px;
+    overflow-y: auto;
+}
+
+
+
+tbody td, thead th {
+    width: 19.2%;
+    float: left;
+}*/
+/* Working sticky table header - Section end*/

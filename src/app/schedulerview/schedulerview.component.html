@@ -1,0 +1,23 @@
+ <div class="row">
+     
+
+  <h4>Datum: </h4>
+  <table class="table ">
+  <thead>
+    <tr>
+      <th>Zeit</th>
+      <th> Platz 1</th>
+      <th> Platz 2</th>
+      <th> Platz 3</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let h of hours">
+        <td class="col-xs-3"><span>{{h}}:00 - {{h+1}}:00</span></td>
+        <td class="col-xs-3"><app-dateview></app-dateview></td>
+        <td class="col-xs-3"><app-dateview></app-dateview></td>
+        <td class="col-xs-3"><app-dateview></app-dateview></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
