@@ -10,14 +10,32 @@ export class DateviewComponent implements OnInit {
   hour:number;
 
   date:Date;
+
+  _reserved:boolean;
   
   constructor() { }
 
   ngOnInit() {
   }
-  //Do reservation for this hour and Date
-  book(){
-    console.log("book");
+ 
+   reserve(){
+    console.log("reserve click");
+    this.reserved = true;
   }
 
+  cancel(){
+    console.log("cancel click");
+    this.reserved = !this.reserved;
+  }
+
+  
+   get reserved() : boolean {
+    return this._reserved ;
+  }
+  
+  
+   set reserved(v : boolean) {
+    this._reserved = v;
+  }
+  
 }

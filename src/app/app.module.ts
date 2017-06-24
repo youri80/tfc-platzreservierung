@@ -26,6 +26,10 @@ import { SchedulerviewComponent } from './schedulerview/schedulerview.component'
       {
         path: 'login',
         component: LoginviewComponent
+      },
+       {
+        path: 'scheduler',
+        component: SchedulerviewComponent
       }
     ])
   ],
