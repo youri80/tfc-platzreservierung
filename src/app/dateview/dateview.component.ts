@@ -9,7 +9,7 @@ export class DateviewComponent implements OnInit {
 
   hour:number;
 
-  @Input() Date:Date;
+   _Date:Date;
   @Input() Court:number;
 
   _reserved:boolean;
@@ -29,8 +29,9 @@ export class DateviewComponent implements OnInit {
     this.reserved = !this.reserved;
   }
 
-  reset(){
+  private init(){
     this.reserved = false;
+    //Serviceaufruf, Prüfung ob ein Termin für Datum, Zeit und Platz vorliegt.
   }
   
    get reserved() : boolean {
@@ -41,5 +42,15 @@ export class DateviewComponent implements OnInit {
    set reserved(v : boolean) {
     this._reserved = v;
   }
+
+  @Input()
+  public get Date() : Date {
+    return this._Date;
+  }
+  public set Date(v : Date) {
+    this._Date = v;
+    this.init();
+  }
+  
   
 }
