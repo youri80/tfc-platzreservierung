@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-dateview',
@@ -9,7 +9,8 @@ export class DateviewComponent implements OnInit {
 
   hour:number;
 
-  date:Date;
+  @Input() Date:Date;
+  @Input() Court:number;
 
   _reserved:boolean;
   
@@ -19,7 +20,7 @@ export class DateviewComponent implements OnInit {
   }
  
    reserve(){
-    console.log("reserve click");
+    console.log(`${this.Date} Platz ${this.Court}`);
     this.reserved = true;
   }
 
@@ -28,6 +29,9 @@ export class DateviewComponent implements OnInit {
     this.reserved = !this.reserved;
   }
 
+  reset(){
+    this.reserved = false;
+  }
   
    get reserved() : boolean {
     return this._reserved ;

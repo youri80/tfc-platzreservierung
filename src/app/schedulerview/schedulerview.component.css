@@ -30,4 +30,8 @@ tbody td, thead th {
     width: 19.2%;
     float: left;
 }*/
-/* Working sticky table header - Section end*/
+
+
+tbody > tr:hover {
+    background-color:gainsboro;
+}

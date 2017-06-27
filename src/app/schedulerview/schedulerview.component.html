@@ -1,7 +1,13 @@
- <div class="row">
-     
+   <div class=" clearfix">
+  <button class="btn btn-secondary float-left" (click)="prevDay()">Später</button>
+  <button class="btn btn-secondary float-left" (click)="today()">Heute</button>
 
-  <h4>Datum: </h4>
+  <button class="btn btn-secondary float-right" (click)="nextDay()">Früher</button>
+  <button class="btn btn-secondary float-right" (click)="tomorrow()">Morgen</button>
+
+ </div>
+ <div class="row">
+  <h4 style="text-align:center"> {{selectedDate | date:"EEEE, dd.MM.yyyy"}} </h4>
   <table class="table ">
   <thead>
     <tr>
@@ -14,10 +20,11 @@
   <tbody>
       <tr *ngFor="let h of hours">
         <td class="col-xs-3"><span>{{h}}:00</span></td>
-        <td class="col-xs-3"><app-dateview></app-dateview></td>
-        <td class="col-xs-3"><app-dateview></app-dateview></td>
-        <td class="col-xs-3"><app-dateview></app-dateview></td>
+        <td class="col-xs-3"><app-dateview #court1 [Date] = "selectedDate" [Court] = "1"></app-dateview></td>
+        <td class="col-xs-3"><app-dateview #court2 [Date] = "selectedDate" [Court] = "2" ></app-dateview></td>
+        <td class="col-xs-3"><app-dateview #court3 [Date] = "selectedDate" [Court] = "3"></app-dateview></td>
       </tr>
     </tbody>
   </table>
 </div>
+

@@ -8,7 +8,8 @@ import { RouterModule } from '@angular/router';
 import { DateviewComponent } from './dateview/dateview.component';
 import { SchedulerviewComponent } from './schedulerview/schedulerview.component';
 
-
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
 
 
 
@@ -19,9 +20,11 @@ import { SchedulerviewComponent } from './schedulerview/schedulerview.component'
     LoginviewComponent,
     DateviewComponent,
     SchedulerviewComponent
+    
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
       {
         path: 'login',
