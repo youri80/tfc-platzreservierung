@@ -59,7 +59,7 @@ export class SchedulerviewComponent implements OnInit {
   }
   
 
-  //Childs müssen über Service kommunizieren
+  
 
  
 

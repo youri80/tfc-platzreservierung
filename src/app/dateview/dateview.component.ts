@@ -13,6 +13,8 @@ export class DateviewComponent implements OnInit {
   @Input() Court:number;
 
   _reserved:boolean;
+
+  private _Reservation:any;
   
   constructor() { }
 
@@ -38,7 +40,6 @@ export class DateviewComponent implements OnInit {
     return this._reserved ;
   }
   
-  
    set reserved(v : boolean) {
     this._reserved = v;
   }
@@ -52,5 +53,14 @@ export class DateviewComponent implements OnInit {
     this.init();
   }
   
+  @Input()
+  public get Reservation() : any {
+    return this._Reservation;
+  }
+  
+  public set Reservation(v : any){
+    this._Reservation = v;
+    
+  }
   
 }
