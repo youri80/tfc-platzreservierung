@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { SchedulerService} from '../services/scheduler.service';
 
 @Component({
   selector: 'app-dateview',
@@ -7,7 +8,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class DateviewComponent implements OnInit {
 
-  hour:number;
+  @Input()Hour:number;
 
    _Date:Date;
   @Input() Court:number;
@@ -15,27 +16,35 @@ export class DateviewComponent implements OnInit {
   _reserved:boolean;
 
   private _Reservation:any;
-  
-  constructor() { }
 
+
+
+  key:number;
+  
+  constructor(private _schedulerService:SchedulerService) {
+    
+  }
+  
   ngOnInit() {
   }
  
    reserve(){
     console.log(`${this.Date} Platz ${this.Court}`);
+    this._schedulerService.bookCourt(this.Date,this.Hour,this.Court);
     this.reserved = true;
   }
 
   cancel(){
     console.log("cancel click");
     this.reserved = !this.reserved;
+    this._schedulerService.cancelCourt(this._Reservation);
   }
 
   private init(){
     this.reserved = false;
     //Serviceaufruf, Prüfung ob ein Termin für Datum, Zeit und Platz vorliegt.
   }
-  
+   @Input()
    get reserved() : boolean {
     return this._reserved ;
   }
@@ -52,15 +61,26 @@ export class DateviewComponent implements OnInit {
     this._Date = v;
     this.init();
   }
-  
+
   @Input()
-  public get Reservation() : any {
-    return this._Reservation;
+  get Reservation(){
+    return this._Reservation ;
   }
-  
-  public set Reservation(v : any){
-    this._Reservation = v;
+
+  set Reservation (val:any){
+    this._Reservation = val;
+    if(val){
+      this.reserved = true;
+    }
+    else {
+      this.reserved = false;
+    }
+    
     
   }
   
+  onInit(id:string){
+    alert("called with id");
+  }
+
 }

@@ -9,8 +9,9 @@ import { DateviewComponent } from './dateview/dateview.component';
 import { SchedulerviewComponent } from './schedulerview/schedulerview.component';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
-
+import { SchedulerService} from './services/scheduler.service';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     RouterModule.forRoot([
       {
         path: 'login',
@@ -36,7 +38,9 @@ import { environment } from '../environments/environment';
       }
     ])
   ],
-  providers: [],
+  providers: [SchedulerService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

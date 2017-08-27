@@ -18,11 +18,11 @@
     </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let h of hours">
-        <td class="col-xs-3"><span>{{h}}:00</span></td>
-        <td class="col-xs-3"><app-dateview #court1 [Date] = "selectedDate" [Court] = "1"></app-dateview></td>
-        <td class="col-xs-3"><app-dateview #court2 [Date] = "selectedDate" [Court] = "2" ></app-dateview></td>
-        <td class="col-xs-3"><app-dateview #court3 [Date] = "selectedDate" [Court] = "3"></app-dateview></td>
+      <tr *ngFor="let s of slots">
+        <td class="col-xs-3"><span>{{s.hour}}:00</span></td>
+        <td *ngFor = "let c of s.courts" class="col-xs-3">
+          <app-dateview #child [Date] = "selectedDate" [Hour]="c.hour" [Court] = "c.court" [reserved] ="c.reserved" [Reservation] = "c.Reservation" ></app-dateview>
+          </td>
       </tr>
     </tbody>
   </table>
